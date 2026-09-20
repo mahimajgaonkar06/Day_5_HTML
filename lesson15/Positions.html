@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Exercises 15</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+
+        h2 {
+            margin-top: 40px;
+        }
+
+        /* =========================
+           15A - Close Button
+        ========================= */
+
+        .box-a {
+            width: 400px;
+            height: 200px;
+            border: 1px solid #aaa;
+            position: relative;
+        }
+
+        .close-a {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: none;
+
+            background-color: black;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           15B - Fixed Box
+        ========================= */
+
+        .fixed-box {
+            width: 320px;
+            height: 180px;
+            background-color: #999;
+
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+        }
+
+
+        /* =========================
+           15C - Close Button
+           inside fixed box
+        ========================= */
+
+        .box-c {
+            width: 400px;
+            height: 200px;
+            border: 1px solid #aaa;
+
+            position: relative;
+        }
+
+        .close-c {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: none;
+
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+
+        .gray-c {
+            width: 320px;
+            height: 140px;
+            background-color: #999;
+
+            position: absolute;
+            left: 40px;
+            top: 30px;
+        }
+
+
+        /* =========================
+           15D - Bottom Right
+        ========================= */
+
+        .box-d {
+            width: 400px;
+            height: 200px;
+            border: 1px solid #aaa;
+
+            position: relative;
+        }
+
+        .gray-d {
+            width: 320px;
+            height: 140px;
+            background-color: #999;
+
+            position: absolute;
+            left: 48px;
+            top: 30px;
+        }
+
+        .close-d {
+            position: absolute;
+            top: -12px;
+            left: 108px;
+
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: none;
+
+            background-color: black;
+            color: white;
+        }
+
+        .time {
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+
+            background-color: black;
+            color: white;
+
+            padding: 3px 6px;
+            font-size: 10px;
+        }
+
+
+        /* =========================
+           15E - Online Shopping
+        ========================= */
+
+        .product-e {
+            width: 260px;
+            height: 320px;
+
+            border: 1px solid #ccc;
+            position: relative;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .product-e img {
+            width: 230px;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .discount-e {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+
+            background-color: white;
+            padding: 5px;
+
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           15F - Product + Add Cart
+        ========================= */
+
+        .product-f {
+            width: 260px;
+            height: 320px;
+
+            border: 1px solid #ccc;
+            position: relative;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .product-f img {
+            width: 230px;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .discount-f {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+
+            background-color: white;
+            padding: 5px;
+
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .cart-btn {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            padding: 8px 15px;
+            border: 1px solid #555;
+            background-color: white;
+
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         15A
+    ========================= -->
+
+    <h2>15A - Close Button</h2>
+
+    <div class="box-a">
+        <button class="close-a">×</button>
+    </div>
+
+
+    <!-- =========================
+         15B
+    ========================= -->
+
+    <h2>15B - Fixed Position</h2>
+
+    <div class="fixed-box"></div>
+
+
+    <!-- =========================
+         15C
+    ========================= -->
+
+    
+
+    <div class="box-c">
+
+        <div class="gray-c"></div>
+
+        <button class="close-c">×</button>
+
+    </div>
+
+
+    <!-- =========================
+         15D
+    ========================= -->
+
+    <h2>15D - Bottom Right Video</h2>
+
+    <div class="box-d">
+
+        <div class="gray-d"></div>
+
+        <button class="close-d">×</button>
+
+    </div>
+
+    <div class="time">0:20</div>
+
+
+    <!-- =========================
+         15E
+    ========================= -->
+
+    <h2>15E - Product Image</h2>
+
+    <div class="product-e">
+
+        <img
+            src="https://images.unsplash.com/photo-1603252110481-7ba873bf42ab?auto=format&fit=crop&w=500&q=80"
+            alt="Shirt"
+        >
+
+        <div class="discount-e">
+            20% OFF
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         15F
+    ========================= -->
+
+    <h2>15F - Product + Add to Cart</h2>
+
+    <div class="product-f">
+
+        <img
+            src="https://images.unsplash.com/photo-1603252110481-7ba873bf42ab?auto=format&fit=crop&w=500&q=80"
+            alt="Shirt"
+        >
+
+        <div class="discount-f">
+            20% OFF
+        </div>
+
+        <button class="cart-btn">
+            Add to Cart
+        </button>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lesson 16 - Finish the Project</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px;
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 15px 30px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .header-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .header-links a {
+            text-decoration: none;
+            color: black;
+        }
+
+        /* =========================
+           TOOLTIP
+        ========================= */
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip-text {
+            position: absolute;
+
+            bottom: -35px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            background-color: #555;
+            color: white;
+
+            padding: 6px 10px;
+
+            font-size: 12px;
+            white-space: nowrap;
+
+            opacity: 0;
+            pointer-events: none;
+
+            transition: opacity 0.2s;
+        }
+
+        .tooltip:hover .tooltip-text {
+            opacity: 1;
+        }
+
+
+        /* =========================
+           VIDEO SECTION
+        ========================= */
+
+        .video-section {
+            
+            margin: 50px auto;
+        }
+
+        .video-title {
+            font-size: 22px;
+            font-weight: bold;
+
+            text-decoration: none;
+            color: black;
+        }
+
+        .video-title:hover {
+            text-decoration: underline;
+        }
+
+
+        /* =========================
+           VIDEO THUMBNAIL
+        ========================= */
+
+        .video-card {
+            width: 320px;
+            margin-top: 20px;
+        }
+
+        .thumbnail-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .thumbnail-container a {
+            display: block;
+        }
+
+        .thumbnail {
+            width: 320px;
+            height: 180px;
+
+            object-fit: cover;
+            display: block;
+        }
+
+        .duration {
+            position: absolute;
+
+            right: 6px;
+            bottom: 6px;
+
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+
+            padding: 3px 5px;
+
+            font-size: 11px;
+        }
+
+
+        /* =========================
+           CHANNEL INFO
+        ========================= */
+
+        .channel-info {
+            display: flex;
+            align-items: center;
+
+            margin-top: 10px;
+        }
+
+        .channel-picture {
+            width: 40px;
+            height: 40px;
+
+            border-radius: 50%;
+            object-fit: cover;
+
+            margin-right: 10px;
+        }
+
+        .video-info {
+            font-size: 14px;
+        }
+
+        .channel-name {
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           16D - MULTIPLE VIDEOS
+        ========================= */
+
+        .video-grid {
+            display: flex;
+            gap: 25px;
+
+            margin-top: 50px;
+        }
+
+        .video-grid .video-card {
+            width: 320px;
+        }
+
+        .video-grid .thumbnail {
+            width: 320px;
+            height: 180px;
+        }
+
+        .video-grid .channel-picture {
+            width: 40px;
+            height: 40px;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+
+        <div class="logo">
+            YouTube
+        </div>
+
+        <div class="header-links">
+
+            <div class="tooltip">
+                <a href="#">Home</a>
+
+                <span class="tooltip-text">
+                    Go to Home
+                </span>
+            </div>
+
+
+            <div class="tooltip">
+                <a href="#">Subscriptions</a>
+
+                <span class="tooltip-text">
+                    Your Subscriptions
+                </span>
+            </div>
+
+
+            <div class="tooltip">
+                <a href="#">Library</a>
+
+                <span class="tooltip-text">
+                    Your Library
+                </span>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         16B - VIDEO TITLE
+    ========================= -->
+
+    <section class="video-section">
+
+        <a
+            class="video-title"
+            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            target="_blank"
+        >
+            Talking Tech and AI with Google CEO Sundar Pichai
+        </a>
+
+
+        <!-- =========================
+             16C - VIDEO THUMBNAIL
+        ========================= -->
+
+        <div class="video-card">
+
+            <div class="thumbnail-container">
+
+                <a
+                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                    target="_blank"
+                >
+
+                    <img
+                        class="thumbnail"
+                        src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=800&q=80"
+                        alt="Video thumbnail"
+                    >
+
+                </a>
+
+
+                <div class="duration">
+                    14:20
+                </div>
+
+            </div>
+
+
+            <!-- Channel picture is also a link -->
+
+            <div class="channel-info">
+
+                <a
+                    href="https://www.youtube.com/"
+                    target="_blank"
+                >
+
+                    <img
+                        class="channel-picture"
+                        src="https://i.pravatar.cc/100?img=12"
+                        alt="Channel"
+                    >
+
+                </a>
+
+
+                <div class="video-info">
+
+                    <div class="channel-name">
+                        Talking Tech and AI with Google CEO Sundar Pichai
+                    </div>
+
+                    <div>
+                        Marques Brownlee
+                    </div>
+
+                    <div>
+                        3.4M views · 6 months ago
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         16D - CHALLENGE
+         MULTIPLE VIDEO CARDS
+    ========================= -->
+
+    <section>
+
+        <h2>Challenge Exercise - 16D</h2>
+
+
+        <div class="video-grid">
+
+
+            <!-- VIDEO 1 -->
+
+            <div class="video-card">
+
+                <div class="thumbnail-container">
+
+                    <a
+                        href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                        target="_blank"
+                    >
+
+                        <img
+                            class="thumbnail"
+                            src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=800&q=80"
+                            alt="Video thumbnail"
+                        >
+
+                    </a>
+
+                    <div class="duration">
+                        14:20
+                    </div>
+
+                </div>
+
+
+                <div class="channel-info">
+
+                    <a
+                        href="https://www.youtube.com/"
+                        target="_blank"
+                    >
+
+                        <img
+                            class="channel-picture"
+                            src="https://i.pravatar.cc/100?img=12"
+                            alt="Channel"
+                        >
+
+                    </a>
+
+
+                    <div class="video-info">
+
+                        <div class="channel-name">
+                            Talking Tech and AI with Google CEO Sundar Pichai
+                        </div>
+
+                        <div>
+                            Marques Brownlee
+                        </div>
+
+                        <div>
+                            3.4M views · 6 months ago
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- VIDEO 2 -->
+
+            <div class="video-card">
+
+                <div class="thumbnail-container">
+
+                    <a
+                        href="https://www.youtube.com/"
+                        target="_blank"
+                    >
+
+                        <img
+                            class="thumbnail"
+                            src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=80"
+                            alt="Video thumbnail"
+                        >
+
+                    </a>
+
+                    <div class="duration">
+                        8:22
+                    </div>
+
+                </div>
+
+
+                <div class="channel-info">
+
+                    <a
+                        href="https://www.youtube.com/"
+                        target="_blank"
+                    >
+
+                        <img
+                            class="channel-picture"
+                            src="https://i.pravatar.cc/100?img=32"
+                            alt="Channel"
+                        >
+
+                    </a>
+
+
+                    <div class="video-info">
+
+                        <div class="channel-name">
+                            Try Not To Laugh Challenge #9
+                        </div>
+
+                        <div>
+                            Markiplier
+                        </div>
+
+                        <div>
+                            19M views · 4 years ago
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+</html>

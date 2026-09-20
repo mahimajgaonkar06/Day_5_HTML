@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 13 - Nested Flexbox</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: white;
+        }
+
+        h2 {
+            margin-top: 40px;
+        }
+
+        /* =====================================
+           13A
+           ===================================== */
+
+        .box-13a {
+            width: 280px;
+            height: 70px;
+            border: 3px solid #ddd;
+
+            display: flex;
+        }
+
+        .box-13a .item1 {
+            width: 100px;
+            background-color: #f2b6c1;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box-13a .item2 {
+            width: 200px;
+            background-color: #b5d9e6;
+        }
+
+
+        /* =====================================
+           13B
+           Nested Flexbox
+           ===================================== */
+
+        .box-13b {
+            width: 280px;
+            height: 55px;
+            border: 3px solid #ddd;
+
+            display: flex;
+        }
+
+        .row1-container {
+            width: 100px;
+            background-color: #f2b6c1;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .row1 {
+            height: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            padding-right: 3px;
+        }
+
+        .row1 span {
+            background-color: black;
+            color: white;
+            padding: 2px;
+        }
+
+        .row2-container {
+            flex: 1;
+            background-color: #b5d9e6;
+
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .row2 {
+            background-color: black;
+            color: white;
+            padding: 2px;
+            margin-right: 2px;
+        }
+
+
+        /* =====================================
+           13C / 13D
+           Gmail style
+           ===================================== */
+
+        .gmail-container {
+            width: 420px;
+            border: 1px solid #ddd;
+            padding: 10px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .mail {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .profile {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .mail-content {
+            flex: 1;
+
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .mail-top {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .sender {
+            font-weight: bold;
+        }
+
+        .time {
+            color: gray;
+            font-size: 12px;
+        }
+
+        .subject {
+            font-weight: bold;
+        }
+
+        .message {
+            color: gray;
+            font-size: 13px;
+        }
+
+
+        /* =====================================
+           13E
+           Multiple Gmail messages
+           ===================================== */
+
+        .gmail-e {
+            width: 420px;
+            border: 1px solid #ddd;
+            padding: 12px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .gmail-e .mail {
+            display: flex;
+        }
+
+
+        /* =====================================
+           13F
+           Twitter style
+           ===================================== */
+
+        .tweet {
+            width: 500px;
+            border: 1px solid #ddd;
+            padding: 15px;
+
+            display: flex;
+            gap: 12px;
+        }
+
+        .tweet-profile {
+            width: 50px;
+            height: 50px;
+
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .tweet-content {
+            flex: 1;
+
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .tweet-header {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+
+        .tweet-name {
+            font-weight: bold;
+        }
+
+        .tweet-handle {
+            color: gray;
+        }
+
+        .tweet-text {
+            line-height: 1.4;
+        }
+
+        .tweet-card {
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            overflow: hidden;
+
+            display: flex;
+        }
+
+        .tweet-card-image {
+            width: 100px;
+            height: 80px;
+            background-color: #ddd;
+        }
+
+        .tweet-card-content {
+            padding: 10px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .website {
+            color: gray;
+            font-size: 12px;
+        }
+
+        .card-title {
+            font-size: 14px;
+        }
+
+
+        /* =====================================
+           13G
+           ===================================== */
+
+        .tweet-g {
+            width: 500px;
+            border: 1px solid #ddd;
+            padding: 15px;
+
+            display: flex;
+            gap: 12px;
+        }
+
+        .tweet-g-content {
+            flex: 1;
+
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- =====================================
+         13A
+         ===================================== -->
+
+    <h2>13A - Flexbox with 2 Elements</h2>
+
+    <div class="box-13a">
+
+        <div class="item1">
+            <span>item1</span>
+        </div>
+
+        <div class="item2"></div>
+
+    </div>
+
+
+    <!-- =====================================
+         13B
+         Nested Flexbox
+         ===================================== -->
+
+    <h2>13B - Nested Flexbox</h2>
+
+    <div class="box-13b">
+
+        <div class="row1-container">
+
+            <div class="row1">
+                <span>row1</span>
+            </div>
+
+            <div class="row1">
+                <span>row2</span>
+            </div>
+
+        </div>
+
+
+        <div class="row2-container">
+
+            <div class="row2">
+                row2
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         13C
+         Gmail single mail
+         ===================================== -->
+
+    <h2>13C - Gmail Layout</h2>
+
+    <div class="gmail-container">
+
+        <div class="mail">
+
+            <img
+                class="profile"
+                src="https://i.pravatar.cc/100?img=47"
+                alt="profile"
+            >
+
+            <div class="mail-content">
+
+                <div class="mail-top">
+
+                    <span class="sender">
+                        Chewy Promotions
+                    </span>
+
+                    <span class="time">
+                        4:58 PM
+                    </span>
+
+                </div>
+
+                <div class="subject">
+                    Biggest sales of the year!
+                </div>
+
+                <div class="message">
+                    Hey there! We're writing to tell you about our...
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         13D
+         Gmail vertical layout
+         ===================================== -->
+
+    <h2>13D - Gmail Vertical Layout</h2>
+
+    <div class="gmail-container">
+
+        <!-- MAIL 1 -->
+
+        <div class="mail">
+
+            <img
+                class="profile"
+                src="https://i.pravatar.cc/100?img=47"
+                alt="profile"
+            >
+
+            <div class="mail-content">
+
+                <div class="mail-top">
+                    <span class="sender">Chewy Promotions</span>
+                    <span class="time">4:58 PM</span>
+                </div>
+
+                <div class="subject">
+                    Biggest sales of the year!
+                </div>
+
+                <div class="message">
+                    Hey there! We're writing to tell you about our...
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MAIL 2 -->
+
+        <div class="mail">
+
+            <img
+                class="profile"
+                src="https://i.pravatar.cc/100?img=12"
+                alt="profile"
+            >
+
+            <div class="mail-content">
+
+                <div class="mail-top">
+                    <span class="sender">Best Buy</span>
+                    <span class="time">12:32 PM</span>
+                </div>
+
+                <div class="subject">
+                    Your Best Buy eReceipt
+                </div>
+
+                <div class="message">
+                    Thank you for shopping at Best Buy, here is...
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MAIL 3 -->
+
+        <div class="mail">
+
+            <img
+                class="profile"
+                src="https://i.pravatar.cc/100?img=32"
+                alt="profile"
+            >
+
+            <div class="mail-content">
+
+                <div class="mail-top">
+                    <span class="sender">Netflix</span>
+                    <span class="time">9:00 AM</span>
+                </div>
+
+                <div class="subject">
+                    Here's what's coming soon to Netflix
+                </div>
+
+                <div class="message">
+                    Brand new movies and shows, old favorites...
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         13E
+         ===================================== -->
+
+    <h2>13E - Multiple Copies of 13D</h2>
+
+    <div class="gmail-e">
+
+        <div class="mail">
+
+            <img
+                class="profile"
+                src="https://i.pravatar.cc/100?img=47"
+                alt=""
+            >
+
+            <div class="mail-content">
+
+                <div class="mail-top">
+                    <span class="sender">Chewy Promotions</span>
+                    <span class="time">4:58 PM</span>
+                </div>
+
+                <div class="subject">
+                    Biggest sales of the year!
+                </div>
+
+                <div class="message">
+                    Hey there! We're writing to tell you about our...
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="mail">
+
+            <img
+                class="profile"
+                src="https://i.pravatar.cc/100?img=12"
+                alt=""
+            >
+
+            <div class="mail-content">
+
+                <div class="mail-top">
+                    <span class="sender">Best Buy</span>
+                    <span class="time">12:32 PM</span>
+                </div>
+
+                <div class="subject">
+                    Your Best Buy eReceipt
+                </div>
+
+                <div class="message">
+                    Thank you for shopping at Best Buy, here is...
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="mail">
+
+            <img
+                class="profile"
+                src="https://i.pravatar.cc/100?img=32"
+                alt=""
+            >
+
+            <div class="mail-content">
+
+                <div class="mail-top">
+                    <span class="sender">Netflix</span>
+                    <span class="time">9:00 AM</span>
+                </div>
+
+                <div class="subject">
+                    Here's what's coming soon to Netflix
+                </div>
+
+                <div class="message">
+                    Brand new movies and shows, old favorites...
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         13F
+         Twitter horizontal + vertical layout
+         ===================================== -->
+
+    <h2>13F - Twitter Layout</h2>
+
+    <div class="tweet">
+
+        <img
+            class="tweet-profile"
+            src="https://i.pravatar.cc/100?img=47"
+            alt="profile"
+        >
+
+        <div class="tweet-content">
+
+            <div class="tweet-header">
+
+                <span class="tweet-name">
+                    supersimple.dev
+                </span>
+
+                <span class="tweet-handle">
+                    @SuperSimpleDev
+                </span>
+
+            </div>
+
+
+            <div class="tweet-text">
+
+                What is backend web development?
+                A complete overview. New video is up!
+
+            </div>
+
+
+            <!-- Nested Flexbox -->
+
+            <div class="tweet-card">
+
+                <div class="tweet-card-image"></div>
+
+                <div class="tweet-card-content">
+
+                    <div class="website">
+                        youtube.com
+                    </div>
+
+                    <div class="card-title">
+                        Backend web development -
+                        a complete overview (2021)
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         13G
+         Same design using nested Flexbox
+         ===================================== -->
+
+    <h2>13G - Nested Flexbox Twitter</h2>
+
+    <div class="tweet-g">
+
+        <img
+            class="tweet-profile"
+            src="https://i.pravatar.cc/100?img=47"
+            alt="profile"
+        >
+
+
+        <div class="tweet-g-content">
+
+            <!-- Row layout -->
+
+            <div class="tweet-header">
+
+                <span class="tweet-name">
+                    supersimple.dev
+                </span>
+
+                <span class="tweet-handle">
+                    @SuperSimpleDev
+                </span>
+
+            </div>
+
+
+            <!-- Text -->
+
+            <div class="tweet-text">
+
+                What is backend web development?
+                A complete overview. New video is up!
+
+            </div>
+
+
+            <!-- Nested horizontal layout -->
+
+            <div class="tweet-card">
+
+                <div class="tweet-card-image"></div>
+
+                <div class="tweet-card-content">
+
+                    <div class="website">
+                        youtube.com
+                    </div>
+
+                    <div class="card-title">
+                        Backend web development -
+                        a complete overview (2021)
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

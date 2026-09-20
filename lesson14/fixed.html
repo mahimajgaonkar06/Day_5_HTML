@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 14 - Position Fixed</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            height: 3000px;
+            font-family: Arial, sans-serif;
+        }
+
+
+        /* =========================
+           14A
+           Bottom Right
+        ========================= */
+
+        .bottom-right {
+            position: fixed;
+
+            bottom: 20px;
+            right: 20px;
+
+            background-color: black;
+            color: white;
+
+            padding: 5px 8px;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           14B
+           Right Sidebar
+        ========================= */
+
+        .right-sidebar {
+            position: fixed;
+
+            top: 0;
+            right: 0;
+
+            width: 100px;
+            height: 100%;
+
+            background-color: green;
+
+            color: white;
+
+            padding: 5px;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           14C
+           Overlay
+        ========================= */
+
+        .overlay {
+            position: fixed;
+
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            background-color: black;
+
+            opacity: 0.15;
+
+            pointer-events: none;
+        }
+
+
+        /* =========================
+           14E
+           Facebook Header
+        ========================= */
+
+        .facebook-header {
+            position: fixed;
+
+            top: 0;
+            left: 0;
+            right: 0;
+
+            height: 55px;
+
+            background-color: white;
+
+            border-bottom: 1px solid #ddd;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 35px;
+
+            z-index: 10;
+        }
+
+
+        .profile-section {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+        }
+
+
+        .profile-section img {
+            width: 35px;
+            height: 35px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+        }
+
+
+        .profile-name {
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+
+        .header-buttons {
+            display: flex;
+
+            gap: 8px;
+        }
+
+
+        .add-friend {
+            background-color: #1877f2;
+
+            color: white;
+
+            border: none;
+
+            padding: 7px 12px;
+
+            border-radius: 4px;
+
+            font-size: 11px;
+        }
+
+
+        .message {
+            background-color: #eee;
+
+            border: none;
+
+            padding: 7px 12px;
+
+            border-radius: 4px;
+
+            font-size: 11px;
+        }
+
+
+        /* =========================
+           14F
+           Discord Double Sidebar
+        ========================= */
+
+        .discord-sidebar {
+            position: fixed;
+
+            top: 55px;
+            left: 0;
+            bottom: 0;
+
+            width: 280px;
+
+            display: flex;
+
+            background-color: #2f3136;
+
+            z-index: 5;
+        }
+
+
+        /* First sidebar */
+
+        .server-sidebar {
+            width: 60px;
+
+            background-color: #202225;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            padding-top: 15px;
+
+            gap: 10px;
+        }
+
+
+        .server-sidebar img {
+            width: 40px;
+            height: 40px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+        }
+
+
+        /* Second sidebar */
+
+        .channel-sidebar {
+            width: 100%;
+
+            padding: 15px 12px;
+
+            color: white;
+        }
+
+
+        .channel-header {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 15px;
+
+            font-size: 13px;
+
+            font-weight: bold;
+        }
+
+
+        .channel {
+            color: #aaa;
+
+            font-size: 13px;
+
+            margin-bottom: 14px;
+        }
+
+
+        /* Main empty area */
+
+        .main-area {
+            margin-left: 280px;
+
+            padding-top: 100px;
+
+            padding-left: 30px;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         14A
+    ========================= -->
+
+    <div class="bottom-right">
+        bottom-right
+    </div>
+
+
+
+    <!-- =========================
+         14B
+    ========================= -->
+
+    <div class="right-sidebar">
+        right sidebar
+    </div>
+
+
+
+    <!-- =========================
+         14C
+    ========================= -->
+
+    <div class="overlay"></div>
+
+
+
+    <!-- =========================
+         14E
+         Facebook Header
+    ========================= -->
+
+    <div class="facebook-header">
+
+        <div class="profile-section">
+
+            <img
+                src="https://i.pravatar.cc/100?img=12"
+                alt="Oliver Cat"
+            >
+
+            <span class="profile-name">
+                Oliver Cat
+            </span>
+
+        </div>
+
+
+        <div class="header-buttons">
+
+            <button class="add-friend">
+                Add Friend
+            </button>
+
+            <button class="message">
+                Message
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         14F
+         Double Sidebar
+    ========================= -->
+
+    <div class="discord-sidebar">
+
+
+        <!-- First Sidebar -->
+
+        <div class="server-sidebar">
+
+            <img
+                src="https://i.pravatar.cc/100?img=47"
+                alt="server"
+            >
+
+            <img
+                src="https://i.pravatar.cc/100?img=32"
+                alt="server"
+            >
+
+            <img
+                src="https://i.pravatar.cc/100?img=12"
+                alt="server"
+            >
+
+        </div>
+
+
+        <!-- Second Sidebar -->
+
+        <div class="channel-sidebar">
+
+            <div class="channel-header">
+
+                <span>
+                    INFO
+                </span>
+
+                <span>
+                    +
+                </span>
+
+            </div>
+
+
+            <div class="channel">
+                # new-videos
+            </div>
+
+            <div class="channel">
+                # updates
+            </div>
+
+            <div class="channel">
+                # faq
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Main page -->
+
+    <div class="main-area">
+
+        <h1>
+            Position Fixed Exercises
+        </h1>
+
+        <p>
+            Scroll the page to see the fixed elements.
+        </p>
+
+    </div>
+
+
+</body>
+</html>
